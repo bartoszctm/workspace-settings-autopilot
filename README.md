@@ -1,91 +1,61 @@
 # Workspace Settings Autopilot
 
-Define your favourite workspace settings **once** – they are written to `.vscode/settings.json` of every folder you open in VS Code. Automatically.
+Write your VS Code settings once – get them in every project automatically.
 
-Great for settings that *must* live in the workspace (e.g. AL/Business Central project settings, `workbench.colorCustomizations` per project, formatter options for a team repo) and that you are tired of copying around.
+The extension writes your template to `.vscode/settings.json` whenever you open a folder. Perfect for AL/Business Central settings, color customizations, or any settings you'd otherwise copy from project to project.
 
-## Features
+## Setup
 
-- ✅ Applies your template automatically when a folder is opened (also in multi-root workspaces)
-- 🔀 Three modes: **merge** (default), **overwrite**, **only if missing**
-- 🧠 Merge is smart: nested objects like `workbench.colorCustomizations` or `[python]` are merged key by key, all other project settings are kept
-- 🤫 No Git noise – the file is only written when something actually changes
-- 📄 Template either directly in your user settings or as a separate `settings.json` file (with live updates when the file changes)
-- 🌍 English & German UI
+1. Install the extension
+2. `Ctrl+Shift+P` → **Settings Autopilot: Edit template**
+3. Done – every folder you open gets your settings
 
-## Getting started
+**Or** use an existing project as your template:  
+`Ctrl+Shift+P` → **Settings Autopilot: Save current project's .vscode/settings.json as template**
 
-1. Install the extension.
-2. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and run one of:
-   - **Settings Autopilot: Edit template** – define the template in your user `settings.json`
-   - **Settings Autopilot: Save current project's .vscode/settings.json as template** – take an existing project as starting point
-   - **Settings Autopilot: Use a settings.json file as template…** – point to a file (e.g. in OneDrive/Dropbox/Git)
-3. Done. Every folder you open now gets your settings.
+**Or** point to a file (e.g. in OneDrive):  
+`Ctrl+Shift+P` → **Settings Autopilot: Use a settings.json file as template…**
 
-### Example (user `settings.json`)
+## Example
 
 ```jsonc
 "settingsAutopilot.template": {
     "editor.tabSize": 4,
-    "files.trimTrailingWhitespace": true,
     "workbench.colorCustomizations": {
         "titleBar.activeBackground": "#263125"
     }
 }
 ```
 
-## Extension Settings
+## Settings
 
 | Setting | Default | Description |
 |---|---|---|
-| `settingsAutopilot.template` | `{}` | The settings written to every `.vscode/settings.json` |
-| `settingsAutopilot.templateFile` | `""` | Optional path to a `settings.json` used instead of `template` (`~` and `${env:VAR}` supported) |
-| `settingsAutopilot.enabled` | `true` | Apply automatically when a folder is opened |
+| `settingsAutopilot.template` | `{}` | Settings written to every `.vscode/settings.json` |
+| `settingsAutopilot.templateFile` | `""` | Path to a file used instead of `template` |
+| `settingsAutopilot.enabled` | `true` | Apply automatically on folder open |
 | `settingsAutopilot.mode` | `merge` | `merge` · `overwrite` · `onlyIfMissing` |
-| `settingsAutopilot.excludeFolders` | `[]` | Folder names or absolute paths to skip |
-| `settingsAutopilot.showNotifications` | `true` | Status bar message after applying |
+| `settingsAutopilot.excludeFolders` | `[]` | Folder names or paths to skip |
+| `settingsAutopilot.showNotifications` | `true` | Show status message after applying |
 
-## Commands
+**merge** (default): keeps existing project settings, merges nested objects like `workbench.colorCustomizations` key by key.  
+**overwrite**: replaces everything.  
+**onlyIfMissing**: only writes if `.vscode/settings.json` doesn't exist yet.
 
-| Command | |
-|---|---|
-| Settings Autopilot: Apply template to .vscode/settings.json now | Run manually |
-| Settings Autopilot: Edit template | Opens the template |
-| Settings Autopilot: Use a settings.json file as template… | Pick a template file |
-| Settings Autopilot: Save current project's .vscode/settings.json as template | Copy a project's settings into your template |
+## 🇩🇪 Deutsch
 
-Logs: *View → Output → Workspace Settings Autopilot*.
-
-## Notes
-
-- In **merge** mode the project file is rewritten as plain JSON, so comments inside the *project's* `settings.json` are not preserved. **overwrite** with a template file keeps the template's comments 1:1.
-- Nothing happens when no folder is open.
-
----
-
-## 🇩🇪 Kurz auf Deutsch
-
-Leg deine Workspace-Einstellungen einmal als Vorlage fest. Die Extension schreibt sie automatisch in `.vscode/settings.json` jedes geöffneten Ordners. Einrichten: `Strg+Shift+P` → **Settings Autopilot: Vorlage bearbeiten**. Die Oberfläche ist auf Deutsch, wenn VS Code auf Deutsch eingestellt ist.
-
+Einstellungen einmal als Vorlage festlegen, die Extension schreibt sie automatisch in jeden Projektordner. `Strg+Shift+P` → **Settings Autopilot: Vorlage bearbeiten**. Die Oberfläche erscheint auf Deutsch, wenn VS Code auf Deutsch eingestellt ist.
 
 ## Development
 
 ```bash
-git clone https://github.com/Bvrtck/workspace-settings-autopilot.git
+git clone https://github.com/bartoszctm/workspace-settings-autopilot.git
 cd workspace-settings-autopilot
 code .
+# F5 → Extension Development Host
 ```
 
-Press **F5** to start an Extension Development Host with the extension loaded. No build step – it's plain JavaScript.
-
-Package / publish:
-
-```bash
-npx @vscode/vsce package   # creates workspace-settings-autopilot-x.y.z.vsix
-npx @vscode/vsce publish   # publishes to the VS Code Marketplace
-```
-
-Contributions and issues are welcome!
+No build step. Package: `npx @vscode/vsce package`
 
 ## License
 
