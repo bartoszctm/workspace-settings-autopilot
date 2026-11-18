@@ -1,0 +1,17 @@
+{
+  "displayName": "Workspace Settings Autopilot",
+  "description": "Automatically applies your own settings template to .vscode/settings.json in every folder you open.",
+  "cmd.applyNow": "Apply template to .vscode/settings.json now",
+  "cmd.editTemplate": "Edit template",
+  "cmd.chooseTemplateFile": "Use a settings.json file as template…",
+  "cmd.saveCurrentAsTemplate": "Save current project's .vscode/settings.json as template",
+  "config.template": "Your settings template. Every key/value here is written to `.vscode/settings.json` of each opened folder. Edit it in your **user** `settings.json`, e.g.\n\n```json\n\"settingsAutopilot.template\": {\n    \"editor.tabSize\": 4,\n    \"files.trimTrailingWhitespace\": true\n}\n```\n\nIgnored if `#settingsAutopilot.templateFile#` is set.",
+  "config.templateFile": "Optional: path to a `settings.json` file used as template instead of `#settingsAutopilot.template#`. Supports `~` and `${env:VAR}`. Changes to the file are applied to all open folders automatically.",
+  "config.enabled": "Automatically apply the template when a folder is opened.",
+  "config.mode": "How the template is applied.",
+  "config.mode.merge": "Merge the template into the existing .vscode/settings.json. Template values win, all other project settings are kept.",
+  "config.mode.overwrite": "Replace .vscode/settings.json completely with the template.",
+  "config.mode.onlyIfMissing": "Only create .vscode/settings.json if the project doesn't have one yet.",
+  "config.excludeFolders": "Folder names or absolute paths that should **not** be touched.",
+  "config.showNotifications": "Show a short status bar message after settings were applied."
+}

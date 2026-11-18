@@ -1,0 +1,17 @@
+{
+  "displayName": "Workspace Settings Autopilot",
+  "description": "Überträgt deine eigene Einstellungsvorlage automatisch in .vscode/settings.json jedes geöffneten Ordners.",
+  "cmd.applyNow": "Vorlage jetzt in .vscode/settings.json übernehmen",
+  "cmd.editTemplate": "Vorlage bearbeiten",
+  "cmd.chooseTemplateFile": "settings.json-Datei als Vorlage verwenden…",
+  "cmd.saveCurrentAsTemplate": ".vscode/settings.json des aktuellen Projekts als Vorlage speichern",
+  "config.template": "Deine Einstellungsvorlage. Jeder Eintrag hier wird in `.vscode/settings.json` jedes geöffneten Ordners geschrieben. Bearbeite sie in deiner **Benutzer**-`settings.json`, z. B.\n\n```json\n\"settingsAutopilot.template\": {\n    \"editor.tabSize\": 4,\n    \"files.trimTrailingWhitespace\": true\n}\n```\n\nWird ignoriert, wenn `#settingsAutopilot.templateFile#` gesetzt ist.",
+  "config.templateFile": "Optional: Pfad zu einer `settings.json`, die statt `#settingsAutopilot.template#` als Vorlage dient. `~` und `${env:VAR}` werden aufgelöst. Änderungen an der Datei werden automatisch in alle offenen Ordner übernommen.",
+  "config.enabled": "Vorlage automatisch beim Öffnen eines Ordners übernehmen.",
+  "config.mode": "Wie die Vorlage übernommen wird.",
+  "config.mode.merge": "Vorlage in die bestehende .vscode/settings.json einmischen. Werte aus der Vorlage gewinnen, alle anderen Projekt-Einstellungen bleiben erhalten.",
+  "config.mode.overwrite": ".vscode/settings.json komplett durch die Vorlage ersetzen.",
+  "config.mode.onlyIfMissing": ".vscode/settings.json nur anlegen, wenn das Projekt noch keine hat.",
+  "config.excludeFolders": "Ordnernamen oder absolute Pfade, die **nicht** angefasst werden sollen.",
+  "config.showNotifications": "Kurze Meldung in der Statusleiste anzeigen, nachdem Einstellungen übernommen wurden."
+}

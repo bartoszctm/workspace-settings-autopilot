@@ -1,0 +1,138 @@
+{
+  "name": "workspace-settings-autopilot",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "1.0.0",
+  "publisher": "bartoszctm",
+  "author": {
+    "name": "bartoszctm"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bvrtck/workspace-settings-autopilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bvrtck/workspace-settings-autopilot/issues"
+  },
+  "homepage": "https://github.com/Bvrtck/workspace-settings-autopilot#readme",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#263125",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "settings",
+    "settings.json",
+    ".vscode",
+    "workspace",
+    "template",
+    "auto",
+    "import"
+  ],
+  "main": "./extension.js",
+  "l10n": "./l10n",
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": false
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "settingsAutopilot.applyNow",
+        "title": "%cmd.applyNow%",
+        "category": "Settings Autopilot"
+      },
+      {
+        "command": "settingsAutopilot.editTemplate",
+        "title": "%cmd.editTemplate%",
+        "category": "Settings Autopilot"
+      },
+      {
+        "command": "settingsAutopilot.chooseTemplateFile",
+        "title": "%cmd.chooseTemplateFile%",
+        "category": "Settings Autopilot"
+      },
+      {
+        "command": "settingsAutopilot.saveCurrentAsTemplate",
+        "title": "%cmd.saveCurrentAsTemplate%",
+        "category": "Settings Autopilot"
+      }
+    ],
+    "configuration": {
+      "title": "Workspace Settings Autopilot",
+      "properties": {
+        "settingsAutopilot.template": {
+          "type": "object",
+          "default": {},
+          "scope": "application",
+          "order": 0,
+          "markdownDescription": "%config.template%"
+        },
+        "settingsAutopilot.templateFile": {
+          "type": "string",
+          "default": "",
+          "scope": "application",
+          "order": 1,
+          "markdownDescription": "%config.templateFile%"
+        },
+        "settingsAutopilot.enabled": {
+          "type": "boolean",
+          "default": true,
+          "scope": "application",
+          "order": 2,
+          "description": "%config.enabled%"
+        },
+        "settingsAutopilot.mode": {
+          "type": "string",
+          "enum": [
+            "merge",
+            "overwrite",
+            "onlyIfMissing"
+          ],
+          "enumDescriptions": [
+            "%config.mode.merge%",
+            "%config.mode.overwrite%",
+            "%config.mode.onlyIfMissing%"
+          ],
+          "default": "merge",
+          "scope": "application",
+          "order": 3,
+          "description": "%config.mode%"
+        },
+        "settingsAutopilot.excludeFolders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "scope": "application",
+          "order": 4,
+          "markdownDescription": "%config.excludeFolders%"
+        },
+        "settingsAutopilot.showNotifications": {
+          "type": "boolean",
+          "default": true,
+          "scope": "application",
+          "order": 5,
+          "description": "%config.showNotifications%"
+        }
+      }
+    }
+  }
+}

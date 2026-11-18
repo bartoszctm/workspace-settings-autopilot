@@ -1,0 +1,21 @@
+{
+  "Choose file…": "Datei auswählen…",
+  "Edit template": "Vorlage bearbeiten",
+  "Everything is already up to date.": "Alles ist bereits aktuell.",
+  "No folder is open.": "Es ist kein Ordner geöffnet.",
+  "Replace": "Ersetzen",
+  "Replace your current template with the settings of {0}?": "Deine aktuelle Vorlage durch die Einstellungen von {0} ersetzen?",
+  "Settings Autopilot: Cannot read template {0}: {1}": "Settings Autopilot: Vorlage {0} konnte nicht gelesen werden: {1}",
+  "Settings Autopilot: Cannot read {0}: {1}": "Settings Autopilot: {0} konnte nicht gelesen werden: {1}",
+  "Settings Autopilot: Error in {0}: {1}": "Settings Autopilot: Fehler in {0}: {1}",
+  "Settings Autopilot: No template configured yet. Define the settings that should be written to every .vscode/settings.json.": "Settings Autopilot: Noch keine Vorlage eingerichtet. Lege fest, welche Einstellungen in jede .vscode/settings.json geschrieben werden sollen.",
+  "Settings applied: {0}": "Einstellungen übernommen: {0}",
+  "Template file set: {0}": "Vorlagendatei gesetzt: {0}",
+  "Template saved from {0}.": "Vorlage aus {0} gespeichert.",
+  "The file does not contain a JSON object.": "Die Datei enthält kein JSON-Objekt.",
+  "Use as template": "Als Vorlage verwenden",
+  "Use current project": "Aktuelles Projekt übernehmen",
+  "Which folder?": "Welcher Ordner?",
+  "{0} has no .vscode/settings.json.": "{0} hat keine .vscode/settings.json.",
+  "{0}/.vscode/settings.json is not valid JSON and was left unchanged.": "{0}/.vscode/settings.json ist kein gültiges JSON und wurde nicht verändert."
+}
